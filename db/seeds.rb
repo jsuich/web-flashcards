@@ -7,7 +7,9 @@ end
 
 5.times do |i|
   create_user
-  create_
+  # create_card   # => Create methods for the remaining two classes  
+  # create_deck   # => that need to be seeded to the database
+
 end
 
 5.times do |i|
