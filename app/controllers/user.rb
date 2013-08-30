@@ -2,6 +2,7 @@ enable :sessions
 # GET #############################
 
 get '/user_home/:id' do
+
   erb :user_home
 end
 
@@ -13,12 +14,16 @@ end
 # POST #############################
 
 post '/user_home' do
-   @user = User.find_by(email: params[:email])
-  if @user.authenticate
+  @user = User.find_by_email(params[:email])
+
+  if @user.authenticate(params[:password])
     session[:user_id] = @user.id
-    redirect_to("/user_home/#{@user.id}")
+    puts
+    puts " The current user is #{current_user.email}" 
+    puts
+    erb :user_home
   else
-    redirect_to("/") # mustdisplay not valid login msg.
+    redirect ("/") # mustdisplay not valid login msg.
   end
 
 end

@@ -1,11 +1,12 @@
+
 <div class="game_container">
-  <h2>Hey User, you are playing X deck</h2>
+  <h2>Hey <%=@current_user.email  %>, you are playing <%=@deck.name %> deck</h2>
 
   <div class="card_container">
-    <textarea>Term Display Here</textarea>
+    <textarea><%=@card_array[@current_card].definition%></textarea>
 
-    <form action="/round">
-      <input type="text" name="guess" method="POST">
+    <form action="/round/<%=@deck.id %>/<%=@current_card %>">
+      <input type="text" method="POST">
       <input type="submit" value="Submit Answer!">
     </form>
 
