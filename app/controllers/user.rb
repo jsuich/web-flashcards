@@ -6,7 +6,6 @@ end
 
 
 
-
 # POST #############################
 
 post '/user_home' do
@@ -20,8 +19,8 @@ post '/user_home' do
 
 end
 
-post '/new_user' do
 
+post '/new_user' do 
   if @user = User.create(params[:user])
     redirect_to("/user_home/#{@user.id}")
   else
