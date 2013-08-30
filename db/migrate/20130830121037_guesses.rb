@@ -2,7 +2,8 @@ class Guesses < ActiveRecord::Migration
 
   def change
 
-    change table :guesses do |t|
+    change_table :guesses do |t|
+      t.belongs_to :card
       t.belongs_to :round
       t.string :input
       t.boolean :correctness

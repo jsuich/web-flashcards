@@ -2,7 +2,7 @@ class Rounds < ActiveRecord::Migration
 
   def change
 
-    create table :rounds do |t|
+    create_table :rounds do |t|
       t.belongs_to :user
       t.belongs_to :deck
 
