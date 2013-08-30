@@ -1,18 +1,24 @@
 <div class="container">
   <div class="login">
-    <form action="/" method="POST">
+    <h3>Log in here.</h3>
+    <form action="/user_home" method="POST">
     <label for="email">Email:</label>
     <input id = 'email' type="text" name="email">
     <label for="password">Password:</label>
     <input id='password' type="password" name="password">
+    <input type="submit" value="login">
   </form>
 </div>
 <div class="register">
-    <form action="/" method="POST">
+    <h2>Register now!</h2>
+    <form action="/new_user" method="POST">
     <label for="email">Email:</label>
-    <input id = 'email' type="text" name="email">
+    <input id = "email" type="text" name="user[email]">
+    <br>
     <label for="password">Password:</label>
-    <input id='password' type="password" name="password">
+    <input id='password' type="password" name="user[password]">
+    <br>
+    <input type="submit" value="register">
   </form>
 </div>
 </div> 
