@@ -6,15 +6,12 @@ class Guess < ActiveRecord::Base
 
   has_one :card
 
-  def correct_answer?
-    self.correctness = (boolean_statement)
-    boolean_statement = ("user's guess" == Card.where(Card.id: self.card_id).definition
+  def set_correct_answer!
+
+    @card = Card.where(id: self.card_id)
+
+    self.correctness = (self.input == @card.definition)
+    self.save
   end
 
-
 end
-
-User's Guess == Correct Answer
-
-Correct Answer is Card.definition
-Which card? Card where card.id == guess.card_id
