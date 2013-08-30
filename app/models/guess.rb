@@ -6,9 +6,9 @@ class Guess < ActiveRecord::Base
 
   has_one :card
 
-  def correct_answer?("user's guess")
+  def correct_answer?
     self.correctness = (boolean_statement)
-    boolean_statement = ("user's guess" == Card.where().definition
+    boolean_statement = ("user's guess" == Card.where(Card.id: self.card_id).definition
   end
 
 
