@@ -1,9 +1,13 @@
+enable :sessions
 # GET #############################
 
 get '/user_home/:id' do
- erb :user_home
+  erb :user_home
 end
 
+get '/round' do
+  erb :round
+end
 
 
 # POST #############################
@@ -22,9 +26,14 @@ end
 
 post '/new_user' do 
   if @user = User.create(params[:user])
-    redirect_to("/user_home/#{@user.id}")
+    redirect ("/user_home/#{@user.id}")
   else
-    redirect_to("/") # must display not valid registrtation msg.
+    redirect ("/") # must display not valid registrtation msg.
   end
 
+end
+
+post '/logout' do
+  session.clear
+  redirect ("/")
 end

@@ -25,9 +25,18 @@ th {
 .deck_container {
   width: 750;
   display:block;
+  margin-top: 50px;
 }
 
-.deck_container a {
+.deck_container h3, a {
   margin-left: 325px;
   margin-right: 325px;
+}
+
+.stats {
+  margin-top: 100px;
+}
+
+.logout {
+  float:right;
 }
