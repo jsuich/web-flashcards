@@ -1,23 +1,26 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
-
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+  <div class="login">
+    <h3>Log in here.</h3>
+    <form action="/user_home" method="POST">
+    <label for="email">Email:</label>
+    <input id = 'email' type="text" name="email">
+    <label for="password">Password:</label>
+    <input id='password' type="password" name="password">
+    <input type="submit" value="login">
+  </form>
 </div>
+<div class="register">
+    <h2>Register now!</h2>
+    <form action="/new_user" method="POST">
+    <label for="email">Email:</label>
+    <input id = "email" type="text" name="user[email]">
+    <br>
+    <label for="password">Password:</label>
+    <input id='password' type="password" name="user[password]">
+    <br>
+    <input type="submit" value="register">
+  </form>
+</div>
+</div> 
+
+

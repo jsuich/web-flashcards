@@ -1,20 +1,27 @@
-def create_user
+# => Create User 10 times with Faker Gem
+
+10.times do |i|
   User.create(
-    name: Faker::Internet.email
+    email: Faker::Internet.email,
     password: "1234"
     )
 end
 
-5.times do |i|
-  create_user
-  # create_card   # => Create methods for the remaining two classes  
-  # create_deck   # => that need to be seeded to the database
+(1..5).each do |deck_no|
 
-end
+  @deck_no = deck_no
 
-5.times do |i|
-  User.create(
-    name: Faker::Internet.email
-    password: "1234"
+  Deck.create(
+    id: @deck_no,
+    name: "#{Faker::Lorem.word.capitalize} English Words"
     )
+
+  10.times do
+    Card.create(
+    deck_id: @deck_no,
+    term: Faker::Lorem.word,
+    definition: Faker::Lorem.sentence(word_count = 4, supplemental = false, random_words_to_add = 4)
+    )
+  end
+
 end
