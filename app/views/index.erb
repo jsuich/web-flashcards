@@ -1,11 +1,20 @@
 <div class="container">
-  <form action="/" method="POST">
-    <label for="username">Username</label>
-    <input type="text" name="username">
+  <div class="login">
+    <form action="/" method="POST">
+    <label for="email">Email:</label>
+    <input id = 'email' type="text" name="email">
+    <label for="password">Password:</label>
+    <input id='password' type="password" name="password">
   </form>
 </div>
+<div class="register">
+    <form action="/" method="POST">
+    <label for="email">Email:</label>
+    <input id = 'email' type="text" name="email">
+    <label for="password">Password:</label>
+    <input id='password' type="password" name="password">
+  </form>
+</div>
+</div> 
 
-<%= form_for(@things) do |f| %>
-    
-<% end %>
 
