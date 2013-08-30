@@ -17,12 +17,15 @@ post '/user_home' do
   else
     redirect_to("/") # mustdisplay not valid login msg.
   end
+
 end
 
-post '/new_user'
+post '/new_user' do
+
   if @user = User.create(params[:user])
     redirect_to("/user_home/#{@user.id}")
   else
     redirect_to("/") # must display not valid registrtation msg.
   end
+
 end
