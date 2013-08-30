@@ -1,0 +1,24 @@
+<div class="game_container">
+  <h2>Hey User, you are playing X deck</h2>
+
+  <div class="card_container">
+    <textarea>Term Display Here</textarea>
+
+    <form action="/round">
+      <input type="text" name="guess" method="POST">
+      <input type="submit" value="Submit Answer!">
+    </form>
+
+    <form action="/user_home/1">
+      <input type="submit" value="End Game">
+    </form>
+  </div>
+
+  <div class="stats_container">
+    <ul>
+      <li># Cards Remaining</li>
+      <li># Cards Played</li>
+      <li>% Correct</li>
+    </ul>
+  </div>
+</div>

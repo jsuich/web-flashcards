@@ -1,0 +1,24 @@
+<% if @user %>
+<h2>Welcome, <%= @user.email %>!</h2>
+<% end %>
+<h2>Test your knowledge!</h2>
+
+<h3>Choose a deck to play!</h3>
+<div class="deck_container">
+  <h3>Deck1</h3>
+  <a href="/round"><img src="http://lorempixel.com/200/200/food"></a>
+</div>
+
+<div class="stats">
+  <h3>Your Stats</h3>
+  <ul>
+    <li>Rounds Played | </li>
+    <li>Decks Completed | </li>
+    <li>Guess % | </li>
+  </ul>  
+</div>
+
+<form class="logout" action="/logout" method="POST">
+    <input type="submit" name="logout" value="logout">
+</form>
+
