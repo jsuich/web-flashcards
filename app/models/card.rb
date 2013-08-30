@@ -4,6 +4,6 @@ class Card < ActiveRecord::Base
   validates :term, presence: true
   validates :definition, presence: true
 
-  has_many :answer
+  has_many :answers
 
 end
