@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
     self.password == pw_input
   end
 
+  def gen_stats
+    
+  end
+
 end
