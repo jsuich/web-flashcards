@@ -6,4 +6,12 @@ class User < ActiveRecord::Base
   
   has_many :rounds
 
+  def authenticate(pw_input)
+    self.password == pw_input
+  end
+
+  def gen_stats
+    
+  end
+
 end
