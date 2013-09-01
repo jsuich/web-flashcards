@@ -3,4 +3,5 @@ def current_user
 end
 
 def current_round
-  @current_deck ||= 
+  @current_round ||= Round.where(user_id: current_user).last
+end
