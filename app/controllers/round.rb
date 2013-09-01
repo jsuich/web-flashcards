@@ -10,21 +10,28 @@ get '/round/:id/:card_id' do
   @current_user = current_user
   @deck = Deck.find(params[:id])
   @card_array = @deck.cards
+  
   if params[:card_id].nil?
     @current_card = 0
     Round.create()
-  elsif (params[:card_id].to_i + 1)
+  elsif @card_array.last.id < params[:card_id].to_i
     @current_card = params[:card_id].to_i + 1
   else
-    redirect '/results'
+    redirect '/results' 
   end
 
   erb :round
 end
 
-## POSTS ##
-
-post '/results' do
+get '/results' do
 
   erb :results
 end
+
+
+## POSTS ##
+
+# post '/results' do
+
+#   erb :results
+# end
