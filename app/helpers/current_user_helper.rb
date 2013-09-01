@@ -7,5 +7,6 @@ end
 # end
 
 def cards_left?
-  params[:card_id].to_i < @card_array.last.id
+  @current_card != @card_array.last
+  # params[:card_id].to_i < @card_array.last.id
 end
