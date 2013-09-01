@@ -6,8 +6,6 @@ class User < ActiveRecord::Base
   
   has_many :rounds
 
-  
-
   def render_stats
     
   end

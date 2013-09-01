@@ -5,12 +5,15 @@
 
 <h3>Choose a deck to play!</h3>
 <div class="deck_container">
-  <% Deck.all do |deck| %>
+  <% @deck_array = Deck.all; @deck_array.each do |deck| %>
 
-  <h3><%=deck.name%></h3>
-  <a href="/round/<%=deck.id%>"><img src="http://lorempixel.com/200/200/food"></a>
+    <div class="deck_icon"
+      <h3><%= deck.name %></h3>
+      <a href="/round/<%=deck.id%>"><img src="http://lorempixel.com/200/200/food"></a>
+    </div>
 
   <% end %>
+
 </div>
 
 <div class="stats">
