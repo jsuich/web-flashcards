@@ -5,8 +5,12 @@
 
 <h3>Choose a deck to play!</h3>
 <div class="deck_container">
-  <h3><%=Deck.first.name%></h3>
-  <a href="/round/<%=Deck.first.id%>"><img src="http://lorempixel.com/200/200/food"></a>
+  <% Deck.all do |deck| %>
+
+  <h3><%=deck.name%></h3>
+  <a href="/round/<%=deck.id%>"><img src="http://lorempixel.com/200/200/food"></a>
+
+  <% end %>
 </div>
 
 <div class="stats">
