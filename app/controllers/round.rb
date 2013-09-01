@@ -14,13 +14,15 @@ get '/round/:id/:card_id' do
   if params[:card_id].nil?
     @current_card_id = 1
     Round.create(current_user.id, @deck.id)
-  elsif params[:card_id].to_i < @card_array.last.id
+    erb :round
+  elsif cards_left?#params[:card_id].to_i < @card_array.last.id
     @current_card_id = params[:card_id].to_i + 1
+    erb :round
   else
-    redirect '/results' 
+    erb :results 
   end
 
-  erb :round
+  
 end
 
 get '/results' do

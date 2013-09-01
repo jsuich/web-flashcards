@@ -1,13 +1,19 @@
 <div class="game_container">
-  <h2>Hey <%= current_user.email  %>, you your results from playing <%=Deck.find_by(current_round.deck_id)name %> deck are...</h2>
+  <h2>Hey 
+    <%= @current_user.email %>, 
+    your results from playing the 
+    <%= @deck.name %> 
+    deck are...</h2>
 
   <div class="game_results">
-    <
+    <h1>You won!</h1>
   </div>
 
   <div class="stats_container">
     <ul>
+      <% if cards_remaining?%>
       <li># Cards Remaining</li>
+      <%end%>
       <li># Cards Played</li>
       <li>% Correct</li>
     </ul>

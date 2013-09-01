@@ -3,5 +3,9 @@ def current_user
 end
 
 def current_round
-  @current_round ||= Round.where(user_id: current_user).last
+  @current_round ||= Round.last#find_by(user_id: current_user)#.last
+end
+
+def cards_left?
+  params[:card_id].to_i < @card_array.last.id
 end
