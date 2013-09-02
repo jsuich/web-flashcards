@@ -10,22 +10,12 @@ get '/round/:id/:card_index' do
   @current_user = current_user
   @deck = Deck.find(params[:id])
   @card_array = @deck.cards
-
-  if params[:card_index].nil?
-    @current_card = @card_array.first
-    @current_round = Round.create(current_user.id, @deck.id)
-
-    erb :round
-  elsif cards_left?#params[:card_id].to_i < @card_array.last.id
-    @current_card = @card_array[params[:card_index].to_i + 1]
-
-    erb :round
-  else
-
-    erb :results 
-  end
-
+  @card_index = 0
   
+  @current_round = Round.create(current_user.id, @deck.id)
+    
+  erb :round
+
 end
 
 get '/results' do
@@ -41,12 +31,8 @@ post '/round/:id/:card_index' do
   @deck = Deck.find(params[:id])
   @card_array = @deck.cards
 
-  if params[:card_index].nil?
-    @current_card = @card_array.first
-    @current_round = Round.create(current_user.id, @deck.id)
-
-    erb :round
-  elsif cards_left?#params[:card_id].to_i < @card_array.last.id
+  @answer = Answer.create(card_id: params[@card_array[@card_index].id], round_id: params[:current_round], input: params[:answer],)
+  if cards_left?#params[:card_id].to_i < @card_array.last.id
     @current_card = @card_array[params[:card_index].to_i + 1]
 
     erb :round
