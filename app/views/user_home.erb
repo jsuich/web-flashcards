@@ -5,15 +5,55 @@
 
 <h3>Choose a deck to play!</h3>
 <div class="deck_container">
+<% @tracker = 1 %>
   <% @deck_array = Deck.all; @deck_array.each do |deck| %>
+  
+  <% if @tracker ==  1 %>
 
-    <div class="deck_icon"
-      <h3><%= deck.name %></h3>
-      <a href="/round/<%=deck.id%>"><img src="http://lorempixel.com/200/200/food"></a>
+    <div class="deck-col" id="col-one">
+      <div class="deck_icon"
+      
+        <a href="/round/<%=deck.id%>/<%=@card_index%>">
+          <div id="deck-icon">
+            <%= @deck.name %>
+          </div>
+        </a>
+        <br>
+      </div>
     </div>
 
+  <% elsif @tracker ==  2 %>
+    <div class="deck-col" id="col-two">      
+      <div class="deck_icon"
+        <a href="/round/<%=deck.id%>/<%=@card_index%>">
+          <div id="deck-icon">
+            <%= @deck.name %>
+          </div>
+        </a>
+        <br>
+      </div>
+    </div>
+  </div>
+
+  <% else %>
+    <div class="deck-col" id="col-three">
+      <div class="deck_icon"
+        <a href="/round/<%=deck.id%>/<%=@card_index%>">
+          <div id="deck-icon">
+            <%= @deck.name %>
+          </div>
+        </a>
+        <br>
+      </div>
+    </div>
+  </div>
+  
   <% end %>
 
+  <% @tracker < 3 ? @tracker += 1 : @tracker = 1 %>
+    
+  <% end %>
+  
 </div>
 
 <div class="stats">
