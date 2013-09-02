@@ -1,60 +1,19 @@
-<% if @user %>
-<h2>Welcome, <%= @current_user.email %>!</h2>
-<% end %>
-<h2>Test your knowledge!</h2>
+<form class="logout" action="/logout" method="POST">
+    <input type="submit" name="logout" value="logout">
+</form>
 
-<h3>Choose a deck to play!</h3>
-<div class="deck_container">
-<% @tracker = 1 %>
-  <% @deck_array = Deck.all; @deck_array.each do |deck| %>
-  
-  <% if @tracker ==  1 %>
+<div id="headiv">
 
-    <div class="deck-col" id="col-one">
-      <div class="deck_icon"
-      
-        <a href="/round/<%=deck.id%>/<%=@card_index%>">
-          <div id="deck-icon">
-            <%= @deck.name %>
-          </div>
-        </a>
-        <br>
-      </div>
-    </div>
+    <% if @user %>
+  <h1>Welcome, <%= @current_user.email %>!</h1>
+    <% end %>
+  <h2>Are you ready to test your knowledge?</h2>
 
-  <% elsif @tracker ==  2 %>
-    <div class="deck-col" id="col-two">      
-      <div class="deck_icon"
-        <a href="/round/<%=deck.id%>/<%=@card_index%>">
-          <div id="deck-icon">
-            <%= @deck.name %>
-          </div>
-        </a>
-        <br>
-      </div>
-    </div>
-  </div>
+  <h3>Choose a deck to play!</h3>
 
-  <% else %>
-    <div class="deck-col" id="col-three">
-      <div class="deck_icon"
-        <a href="/round/<%=deck.id%>/<%=@card_index%>">
-          <div id="deck-icon">
-            <%= @deck.name %>
-          </div>
-        </a>
-        <br>
-      </div>
-    </div>
-  </div>
-  
-  <% end %>
-
-  <% @tracker < 3 ? @tracker += 1 : @tracker = 1 %>
-    
-  <% end %>
-  
 </div>
+
+<div id="statsdecks">
 
 <div class="stats">
   <h3>Your Stats</h3>
@@ -65,7 +24,25 @@
   </ul>  
 </div>
 
-<form class="logout" action="/logout" method="POST">
-    <input type="submit" name="logout" value="logout">
-</form>
+<div id="colsep"></div>
+
+<div class="deck_container">
+
+  <% @deck_array = Deck.all %>
+
+  <% @deck_array.each do |deck| %>
+    <a href="/round/<%= deck.id%>/<%= @card_index %>">
+      <div class="deck_icon">
+            <%= deck.name %>
+      </div>
+    </a>
+    <br>
+  <% end %>
+</div>
+
+</div>
+
+
+
+
 

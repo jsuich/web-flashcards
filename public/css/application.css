@@ -1,76 +1,147 @@
-html {
-  background-image: url('index-cards.jpg');
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-} 
+.login{
+  position: fixed;
+  right: 20px;
+  top: 10px;
+  width:auto;
+  height:auto;
+  
+}
+.logintext {
+  top: 0px;
+  /*border: 1px dashed purple;*/
+  
+}
 
- .container {
+ #logobs {
+  display:inline-block;
+  margin: 5px;
+ }
+
+#intro {
+  position: fixed;
+  top: 100px;
+}
+ #regobs {
+  display:inline-block;
+  margin: 5px;
+ }
+
+.register {
+  /*border: 2px solid black;
+  border-radius: 2px;*/
+  height: 250px;
+  width: 450px;
+  position: fixed;
+  top: 300px;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  padding-top: 55px;
+  background: url('blankcard.jpg') no-repeat top center;
+  background-size: cover;
+  box-shadow: 10px 10px 5px #888888;
+}
+#register {
+  float: right;
+}
+
+.logout {
+  position: relative;
+  float: right;
+  right: 20px;
+  top: 10px;
+}
+
+
+html {
+  width:100%;
+  height:100%;
+  
+} 
+h1 {
+  color: blue;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+#headiv {
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  padding-bottom: -20px;
+}
+
+.container {
   margin: 20px auto;
-  width: 850px;
-  height: 1000px;
+  width: 800px;
+  height: auto;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  /*border: 1px dotted black;*/
+}
+
+headiv.h3 {
+  text-align: right
 }
 
 th {
   text-align: left;
 }
 
-.login {
-
-  float: right;
-}
-
-.register {
-
-  position: fixed;
-  top: 50%;
-  left: 50%;
-}
-
-.deck_container {
-  width: 750;
-  display:block;
-  margin-top: 50px;
-  column-count: 3;
-  column-fill: balance;
-  column-gap: 20px;
-  column-rule-width: 0px;
-  border: 1px dotted blue;
-}
-
 .stats {
-  margin-top: 100px;
-}
-
-.logout {
-  float:right;
-}
-
-#deck-icon {
-  border:1px solid black;
+  display: inline-block;
+  float:left;
+  left: 10px
   font: sans-serif, bold, 10px, oblique;
-  font-size: 30px;
-  width: 250px;
-  height: 120px;
+  font-size: 15px;
+  width: 180px;
+  height: auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 0px;
+  padding: 20px;
+  display: relative;
+  position: center;
+}
+
+}
+
+#statsdecks {
+  display: inline-block;
+  border: 1px dashed orange;
+  padding: 10px;
+}
+
+#colsep {
+  width: 50px;
+  display: inline-block;
+}
+.deck_container {
+  width: auto;
+  height: auto;
+  margin: 0px;
+  left-margin: 20px;
+  padding: 0px;
+  top-padding: 0px;
+  border: 1px dotted blue;
+  display: inline-block;
+  right: 0px;
+  top: -10px;
+  
+}
+
+.deck_icon {
+  background-color:#fff7e0;
+  border:2px solid black;
+  border-radius:2px;
+  font: sans-serif, bold, 10px, oblique;
+  font-size: 35px;
+  width: 200;
+  height: 150;
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 0px;
+  padding: 20px;
 }
-
-.deck-col {
-  margin: 10px;
-}
-
-
-
-
-
-
-
-
-
-
 
 

@@ -1,24 +1,41 @@
-<div class="container">
-  <div class="login">
-    <h3>Log in here.</h3>
+<div class="login">
+
+    <div id="logobs" class="logintext"><h3>Login:</h3></div>
+    <div id="logobs">
     <form action="/user_home" method="POST">
-    <label for="email">Email:</label>
-    <input id = 'email' type="text" name="email">
-    <label for="password">Password:</label>
-    <input id='password' type="password" name="password">
-    <input type="submit" value="login">
-  </form>
+        <div id="logobs">
+            <label for="email">Email:</label>
+            <br><br>
+            <label for="password">Password:</label>
+        </div>
+
+        <div id="logobs">
+            <input id = 'email' type="text" name="email">
+            <br><br>
+            <input id='password' type="password" name="password">
+            <input type="submit" value="login">
+            
+        </div>
+
+    </form>
 </div>
+</div>
+<div id="intro"> <h1>Welcome to Quizzery... <br>learning without misery! <h1> </div>
 <div class="register">
-    <h2>Register now!</h2>
+    <h1>Register now!</h1>
+    <br>
     <form action="/new_user" method="POST">
-        <label for="email">Email:</label>
-        <input id = "email" type="text" name="user[email]">
-        <br>
-        <label for="password">Password:</label>
-        <input id='password' type="password" name="user[password]">
-        <br>
-        <input type="submit" value="register">
+        <div id="regobs">
+            <label for="email">Email:</label>
+            <br><br>
+            <label for="password">Password:</label>
+        </div>
+        <div id="regobs">
+            <input id = "email" type="text" name="user[email]">
+            <br><br>
+            <input id='password' type="password" name="user[password]">
+        </div>
+        <div id="regobs" id="register"><input type="submit" value="register"></div>
     </form>
 </div>
 </div> 
