@@ -3,10 +3,10 @@
   <h2>Hey <%=@current_user.email  %>, you are playing <%=@deck.name %> deck</h2>
 
   <div class="card_container">
-    <textarea><%=@card_array[@current_card].definition%></textarea>
+    <textarea><%=@card_array.first.definition%></textarea>
 
-    <form action="/round/<%=@deck.id %>/<%=@current_card %>">
-      <input type="text" method="POST">
+    <form method="POST" action="/round/<%=@deck.id %>">
+      <input type="text" name="answer">
       <input type="submit" value="Submit Answer!">
     </form>
 

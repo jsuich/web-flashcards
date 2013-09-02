@@ -10,13 +10,23 @@ get '/round' do
   erb :round
 end
 
+get '/user_home' do
+  @user = User.find_by(email: params[:email])
+end
 
 # POST #############################
+post '/login_error' do
+  erb :login_error
+end
 
 post '/user_home' do
-  @user = User.find_by_email(params[:email])
+  # @user = User.find_by_email(params[:email])
+  
+  @user = User.find_by(email: params[:email]) # => Got new error:NoMethodError at /user_home
+    # undefined method `authenticate' for #<ActiveRecord::Relation::ActiveRecord_Relation_User:0x007fa22cb132f0>
+  # => Moved Authenticate Method here from user.rb
 
-  if @user.authenticate(params[:password])
+  if @user.password == (params[:password])
     session[:user_id] = @user.id
     puts
     puts " The current user is #{current_user.email}" 
