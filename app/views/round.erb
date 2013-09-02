@@ -1,3 +1,7 @@
+@card_index = params[:card_index]
+@deck = Deck.find(params[:id])
+@card_array = @deck.cards
+
 
 <div class="game_container">
   <h2>Hey <%=@current_user.email  %>, you are playing <%=@deck.name %> deck</h2>
@@ -5,7 +9,7 @@
   <div class="card_container">
     <textarea><%=@card_array.first.definition%></textarea>
 
-    <form method="POST" action="/round/<%=@deck.id %>">
+    <form method="POST" action="/round/<%=@deck.id %>/<%=@card_index %>">
       <input type="text" name="answer">
       <input type="submit" value="Submit Answer!">
     </form>

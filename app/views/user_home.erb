@@ -1,20 +1,19 @@
-<% if @user %>
-<h2>Welcome, <%= @current_user.email %>!</h2>
-<% end %>
-<h2>Test your knowledge!</h2>
+<form class="logout" action="/logout" method="POST">
+    <input type="submit" name="logout" value="logout">
+</form>
 
-<h3>Choose a deck to play!</h3>
-<div class="deck_container">
-  <% @deck_array = Deck.all; @deck_array.each do |deck| %>
+<div id="headiv">
 
-    <div class="deck_icon"
-      <h3><%= deck.name %></h3>
-      <a href="/round/<%=deck.id%>"><img src="http://lorempixel.com/200/200/food"></a>
-    </div>
+    <% if @user %>
+  <h1>Welcome, <%= @current_user.email %>!</h1>
+    <% end %>
+  <h2>Are you ready to test your knowledge?</h2>
 
-  <% end %>
+  <h3>Choose a deck to play!</h3>
 
 </div>
+
+<div id="statsdecks">
 
 <div class="stats">
   <h3>Your Stats</h3>
@@ -25,7 +24,25 @@
   </ul>  
 </div>
 
-<form class="logout" action="/logout" method="POST">
-    <input type="submit" name="logout" value="logout">
-</form>
+<div id="colsep"></div>
+
+<div class="deck_container">
+
+  <% @deck_array = Deck.all %>
+
+  <% @deck_array.each do |deck| %>
+    <a href="/round/<%= deck.id%>/0">
+      <div class="deck_icon">
+            <%= deck.name %>
+      </div>
+    </a>
+    <br>
+  <% end %>
+</div>
+
+</div>
+
+
+
+
 
