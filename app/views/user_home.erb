@@ -31,7 +31,7 @@
   <% @deck_array = Deck.all %>
 
   <% @deck_array.each do |deck| %>
-    <a href="/round/<%= deck.id%>/<%= @card_index %>">
+    <a href="/round/<%= deck.id%>/0">
       <div class="deck_icon">
             <%= deck.name %>
       </div>

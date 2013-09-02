@@ -19,7 +19,11 @@
 
 #intro {
   position: fixed;
-  top: 100px;
+  top: 40px;
+  font-family: sans-serif;
+  font-style: bold;
+  font-size: 40px;
+  color: white;
 }
  #regobs {
   display:inline-block;
@@ -32,20 +36,31 @@
   height: 250px;
   width: 450px;
   position: fixed;
-  top: 300px;
+  top: 250px;
   margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0px;
+  margin-right: 0px;
   padding: 20px;
-  padding-top: 55px;
+  padding-top: 44px;
   background: url('blankcard.jpg') no-repeat top center;
   background-size: cover;
-  box-shadow: 10px 10px 5px #888888;
+  box-shadow: 10px 10px 10px #5e5e5e;
 }
 #register {
   float: right;
 }
 
+#quizlogo {
+  background: url('QuizIcon.jpg') no-repeat top center;
+  background-size: cover;
+  width:400px;
+  height: 400px;
+  display: fixed;
+  top: 300px
+  right: 50px;
+  margin-right:50px;
+  margin-right: 50px;
+}
 .logout {
   position: relative;
   float: right;
@@ -55,8 +70,7 @@
 
 
 html {
-  width:100%;
-  height:100%;
+  background-color: #9dc5de;
   
 } 
 h1 {
@@ -78,6 +92,10 @@ h1 {
   height: auto;
   padding: 0px 20px 20px 20px;
   /*border: 1px dotted black;*/
+}
+
+#headiv {
+  background-color: white;
 }
 
 headiv.h3 {
@@ -104,6 +122,7 @@ th {
   padding: 20px;
   display: relative;
   position: center;
+  background-color: white;
 }
 
 }
@@ -125,7 +144,6 @@ th {
   left-margin: 20px;
   padding: 0px;
   top-padding: 0px;
-  border: 1px dotted blue;
   display: inline-block;
   right: 0px;
   top: -10px;
@@ -133,9 +151,9 @@ th {
 }
 
 .deck_icon {
-  background-color:#fff7e0;
+  background-color: white;
   border:2px solid black;
-  border-radius:2px;
+  border-radius:3px;
   font: sans-serif, bold, 10px, oblique;
   font-size: 35px;
   width: 200;
